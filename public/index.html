@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>formulario contacto</title>
+    <link rel="stylesheet" href="/public/build/css/app.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+
+      <div class="container_successfull">
+        <div class="container_title">
+          <h2>Message Sent!</h2>
+          <img src="assets/images/icon-success-check.svg" alt="icon success">
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+
+      <section class="container_main">
+        <h1 class="title">Contact Us</h1>
+
+        <form>
+          <div class="inputs_name">
+            <div class="input">
+              <label for="name">First Name</label>
+
+              <input id="name" type="text" name="name"/>
+            </div>
+
+            <div class="input">
+              <label for="last_name">Last Name</label>
+
+              <input id="last_name" type="text" name="last-name"/>
+            </div>
+          </div>
+
+          <div class="input">
+            <label for="email">Email Address</label>
+
+            <input id="email" type="email" name="email-address"/>
+          </div>
+
+          <div class="input">
+            <label>Query Type</label>
+
+            <div class="container_radio">
+              <div class="inputs_radio">
+                <label class="radio"
+                  >General Enquiry <input type="radio" name="type" value="General Enquiry"/><span
+                    class="check"
+                  ></span>
+                </label>
+              </div>
+
+              <div class="inputs_radio">
+                <label class="radio"
+                  >Support Request <input type="radio" name="type" value="Support Request"/><span
+                    class="check"
+                  ></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="input">
+            <label>Message</label>
+
+            <textarea id="message" name="message"></textarea>
+          </div>
+
+          <div class="consent">
+            <input type="checkbox" name="checkbox"/><span class="check"></span>
+            <label>I consent to being contacted by the team</label>
+          </div>
+
+          <div class="submit">
+            <input type="submit" value="Submit" id="submit"/>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="/public/build/js/app.js" type="module"></script>
+  </body>
+</html>

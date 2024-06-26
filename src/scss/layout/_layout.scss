@@ -1,0 +1,131 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+main {
+    display: flex;
+    justify-content: center;
+
+    @include m.tablet {
+        min-height: 100vh;
+        align-items: center;
+    }
+    
+    .container_main {
+        width: 90%;
+        margin: 2.5rem 0;
+        background-color: v.$white;
+        border-radius: 1.5rem;
+        padding: 1rem 2rem 2rem 2rem;
+        
+        @include m.tablet {
+            max-width: 65rem;
+            padding: 2rem 3rem 3rem 3rem;
+            margin: 11rem 0;
+        }
+
+        .title {
+            text-align: left;
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+
+            @include m.tablet  {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/* Estilos a los input's y label's en general */
+.input {
+
+    /* Estilos a los label's */
+    label {
+        display: block;
+        font-size: 1.4rem;
+        margin-bottom: .5rem;
+        margin-top: 2rem;
+
+        &::after {
+            content: "*";
+            color: v.$greenMedium;
+            margin-left: 1rem;
+        }
+    }
+
+    /* Estilos a los input's */
+    input, textarea, .inputs_radio {
+        width: 100%;
+        display: block;
+        border: solid .1rem v.$greyMedium;
+        border-radius: .8rem;
+        padding: 1rem 2rem;
+        color: v.$greyDarker;
+        font-size: 1.8rem;
+
+        /* Cambio del estilo del focus visible de los input's */
+        &:focus-visible {
+            outline: .1rem solid v.$greenMedium;
+        }
+    }
+
+    input:hover, textarea:hover {
+        border: .1rem solid v.$greenMedium;
+        cursor: pointer;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 20rem;
+        max-height: 30rem;
+        line-height: 2.5rem;
+        
+        &:focus-visible {
+            border-color: v.$greyDarker;
+        }
+
+        @include m.tablet {
+            min-height: 10rem;
+            max-height: 15rem;
+        }
+    }
+
+    /* Estilos cuando las alertas esten activas */
+    .input_alert {
+       border-color: v.$red; 
+
+       &:hover {
+        border-color: v.$red;
+       }
+    }
+}
+
+.inputs_name {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 1.5rem;
+    }
+}
+
+/* Estilos al boton submit */
+.submit {
+
+    input {
+        @include m.boton(v.$greenMedium, block);
+        width: 100%;
+        font-size: 1.4rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-top: 3rem;
+    }
+}
+
+.alert {
+    color: v.$red;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: .5rem;
+}
